@@ -1,0 +1,209 @@
+/* 
+    Created by: @agungyitno
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+:root {
+  --light: #e5e5e5;
+  --dark: #1a1a1a;
+  --gray: #aaaaaa;
+  --white: #f9f9f9;
+  --black: #060606;
+  --green: #54b435;
+  --red: #dc3535;
+}
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--dark);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--black);
+  border-radius: 4px;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  background: var(--dark);
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header {
+  margin-top: 24px;
+  color: var(--light);
+}
+
+.card {
+  position: relative;
+  margin: 30px auto 0px;
+  width: 100%;
+  max-width: 500px;
+  height: 80vh;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 12px;
+}
+
+.card:before {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  left: -50%;
+  top: -50%;
+  width: 200%;
+  height: 200%;
+  border-radius: 25%;
+  background-color: tra;
+  background-repeat: no-repeat;
+  background-size: 50% 50%, 50% 50%;
+  background-position: 0 0, 100% 0, 100% 100%, 0 100%;
+  background-image: linear-gradient(transparent, transparent),
+    linear-gradient(90deg, #0000ff, var(--green), #ffff00, #ff0000),
+    linear-gradient(transparent, transparent),
+    linear-gradient(270deg, #0000ff, var(--green), #ffff00, #ff0000);
+  animation: rotate 3s linear infinite;
+}
+
+.card:after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 5px;
+  top: 5px;
+  width: calc(100% - 10px);
+  height: calc(100% - 10px);
+  background: var(--dark);
+  border-radius: 10px;
+}
+
+@keyframes rotate {
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.card::before {
+  filter: blur(36px);
+}
+
+.card-header {
+  padding: 12px;
+}
+
+.card-body {
+  padding: 0px 12px 12px 12px;
+  height: calc(100% - 64px);
+  overflow: auto;
+}
+
+.input-group {
+  max-height: 200px;
+  width: 100%;
+}
+
+input[type="text"] {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.input {
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 10px 8px 36px;
+  border: solid 1px var(--green);
+  outline-width: 1px;
+  outline-color: var(--green);
+  border-radius: 6px;
+  color: var(--light);
+  background-color: var(--dark);
+}
+
+.input::placeholder {
+  color: var(--gray);
+}
+
+.input-icon {
+  position: absolute;
+  margin-top: 12px;
+  margin-left: 12px;
+  color: var(--gray);
+}
+
+ul.list {
+  list-style-type: none;
+}
+
+li.list-item {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  padding-bottom: 4px;
+  padding-top: 16px;
+}
+
+input[type="checkbox"] {
+  height: auto;
+  width: 16px;
+  cursor: pointer;
+  accent-color: var(--green);
+  border-color: var(--green);
+}
+
+input[type="checkbox"]:checked ~ .list-input {
+  text-decoration: line-through;
+}
+
+.list-input {
+  width: 100%;
+  background-color: transparent;
+  color: var(--light);
+  outline: none;
+  border: none;
+  border-bottom: solid 1px var(--green);
+}
+
+.list-input.complete {
+  text-decoration: line-through;
+}
+
+.input:focus {
+  outline: none !important;
+  border: 1px dashed var(--green);
+}
+
+.list-input:focus {
+  border-bottom: dashed 1px var(--green);
+}
+
+.btn-icon {
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--red);
+  opacity: 1;
+}
+
+.btn-icon:hover {
+  opacity: 0.6;
+}
