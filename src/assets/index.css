@@ -50,6 +50,10 @@ header {
   color: var(--light);
 }
 
+div {
+  color: var(--white);
+}
+
 .card {
   position: relative;
   margin: 30px auto 0px;
